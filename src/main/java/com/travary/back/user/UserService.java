@@ -15,6 +15,7 @@ public class UserService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    // 회원가입
     public void join(User user) {
         System.out.println(user);
         user.setRole("ROLE_USER");
@@ -23,5 +24,4 @@ public class UserService {
         user.setPassword(encPassword);
         userRepository.save(user);
     }
-
 }

@@ -23,8 +23,8 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeRequests(authorize -> authorize
                         // 접근권한설정
-                        .antMatchers("/user/**").authenticated() // 인증이 이루어진 경우우
-                       .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+                        .antMatchers("/user/**").authenticated() // 인증이 이루어진 경우
+                        .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
                         .antMatchers("/manager/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')")
                         .anyRequest().permitAll() // 인증이 이루어지지 않아도 모든 사용자가 접근
                 )
