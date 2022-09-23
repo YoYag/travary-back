@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@T
 public class UserService {
 
     @Autowired
@@ -23,5 +24,8 @@ public class UserService {
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
         user.setPassword(encPassword);
         userRepository.save(user);
+    }
+
+    public void login(User user) {
     }
 }

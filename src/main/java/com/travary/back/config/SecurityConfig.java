@@ -30,8 +30,10 @@ public class SecurityConfig {
                 )
                 // 인증필터에 의해 로그인하지 않은 경우
                 .formLogin()
-                .loginPage("/login"); // 로그인 페이지로 이동
-
+                .usernameParameter("identifier")
+                .loginPage("/sign_in") // 로그인 페이지로 이동
+                .loginProcessingUrl("/login") // /login 주소가 호출되면 시큐리티가 낚아ㅐ서 대신 로그인을 진행
+                .defaultSuccessUrl("/");
         return http.build();
     }
 }
