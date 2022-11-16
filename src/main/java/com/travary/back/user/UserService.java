@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-@T
 public class UserService {
 
     @Autowired
