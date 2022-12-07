@@ -2,11 +2,13 @@ package com.travary.back.plan;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@NoArgsConstructor
 @Data
 @Entity
 public class Plan {

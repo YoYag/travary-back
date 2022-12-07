@@ -1,10 +1,9 @@
 package com.travary.back.plan;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/plan")
@@ -19,5 +18,11 @@ public class PlanController {
         System.out.println(plan);
         this.planService.postPlan(plan);
         return "생성됨";
+    }
+
+    // plan 조회
+    @GetMapping("/list/all")
+    public List<Plan> getPlanList() {
+        return this.planService.getPlanList();
     }
 }

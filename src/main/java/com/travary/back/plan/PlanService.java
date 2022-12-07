@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -14,6 +15,10 @@ public class PlanService {
     @Transactional
     public void postPlan(Plan plan) {
         Plan postPlan = plan.createPlan(plan);
-        planRepository.save(postPlan);
+        this.planRepository.save(postPlan);
+    }
+
+    public List<Plan> getPlanList() {
+        return this.planRepository.findAll();
     }
 }
